@@ -1,0 +1,2 @@
+# TrustedInstallerManager_TIMR
+适用于Windows x64的提权工具
