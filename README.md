@@ -1,5 +1,5 @@
 <div align="center">
-  <img src=".img/3.png" width="150" alt="TIMR Logo">
+  <img src="assets/3.png" width="150" alt="TIMR Logo">
 
   # TIMR (TrustedInstallerManager)
 
@@ -23,10 +23,9 @@
 ## 界面预览
 
 <div align="center">
-  <img src=".img/1 (2).png" width="45%" alt="主界面">
+  <img src="assets/1 (2).png" width="45%" alt="主界面">
   &nbsp;&nbsp;&nbsp;&nbsp;
-  <img src=".img/12.png" width="45%" alt="任务管理器">
-  <p><i>TIMR 现代化主界面与内置进程管理器</i></p>
+  <img src="assets/12.png" width="45%">
 </div>
 
 ## 下载
