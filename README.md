@@ -1,27 +1,34 @@
 <div align="center">
+  <img src=".img/3.png" width="150" alt="TIMR Logo">
 
-# 🛡️ TIMR (TrustedInstallerManager)
+  # TIMR (TrustedInstallerManager)
 
-**一款现代化、高效率的 Windows 权限管理与进程强杀工具**
+  **一款现代化、高效率的 Windows 权限管理与进程强杀工具**
 
-[![Version](https://img.shields.io/badge/Version-1.5.2-blue.svg)](#)
-[![Python](https://img.shields.io/badge/Python-3.8%2B-brightgreen.svg)](#)
-[![Platform](https://img.shields.io/badge/Platform-Windows_10_|_11-lightgrey.svg)](#)
-[![License](https://img.shields.io/badge/License-MIT-orange.svg)](#)
-
-[核心特性](#-核心特性) • [技术原理](#-技术原理与边界) • [如何打包](#-编译与打包指南) • [⚠️ 重要声明](#%EF%B8%8F-重要声明与免责条款)
-
+  [![Version](https://img.shields.io/badge/Version-1.5.2-blue.svg)](#)
+  [![Python](https://img.shields.io/badge/Python-3.8%2B-brightgreen.svg)](#)
+  [![Platform](https://img.shields.io/badge/Platform-Windows_10_|_11-lightgrey.svg)](#)
+  [![License](https://img.shields.io/badge/License-MIT-orange.svg)](#)
 </div>
 
 ---
 
-## 📖 简介
+## 简介
 
 **TIMR** 是由 [@YUNLI](https://github.com/yunlilun) 开发的一款完全开源的 Windows 系统工具。它不仅是一个简单的文件/文件夹提权工具，更集成了现代化的 UI 渲染引擎和高级的进程强杀机制。
 
 无论你是遇到顽固无法删除的系统级文件，还是需要处理占用资源且无法被任务管理器结束的流氓软件，TIMR 都能为你提供最高效的解决方案。
 
-## ✨ 核心特性
+## 界面预览
+
+<div align="center">
+  <img src=".img/1 (2).png" width="45%" alt="主界面">
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <img src=".img/12.png" width="45%" alt="任务管理器">
+  <p><i>TIMR 现代化主界面与内置进程管理器</i></p>
+</div>
+
+## 核心特性
 
 - **双重强杀引擎**：内置原生 `taskkill` 引擎，同时集成了微软官方 Sysinternals `PsExec` 引擎。当普通管理员权限无法结束时，可自动降级或手动切换至 SYSTEM 级权限强杀。
 - **深度文件提权**：基于 UAC 与 `takeown` / `icacls`，暴力夺取任意文件的 TrustedInstaller 级所有权。
@@ -32,7 +39,7 @@
 
 ## 技术原理与边界
 
-### 1. 所谓的“获取 TrustedInstaller 权限”
+### 1. 关于“获取 TrustedInstaller 权限”
 本程序并非通过底层漏洞“窃取” TI 的 Token。而是通过请求管理员 UAC 提权后，调用 `takeown` 和 `icacls` 强制修改文件的所有者（将所有者从 TrustedInstaller 改为 Administrators 组），从而获得完全控制权。
 
 ### 2. SYSTEM 级强杀 (PsExec 引擎)
@@ -40,10 +47,10 @@
 
 ### 3. 关于 PPL (受保护进程轻量级) 的边界
 部分安全软件（如火绒、360）的核心进程受 Windows 内核 **PPL** 机制保护。
-*   **TIMR 无法结束这些进程**：因为任何用户态程序（包括任务管理器甚至 SYSTEM 权限）都无法强行跨越 PPL 内核屏障。
-*   **为什么不集成“漏洞驱动 (BYOVD)”？**：虽然使用第三方易受攻击的驱动加载到内核可以绕过 PPL，但这种行为极易导致系统蓝屏（BSOD），且会被全球所有杀毒软件直接判定为勒索木马并永久拉黑。TIMR 坚守安全底线，纯用户态运行。
+* **TIMR 无法结束这些进程**：因为任何用户态程序（包括任务管理器甚至 SYSTEM 权限）都无法强行跨越 PPL 内核屏障。
+* **为什么不集成“漏洞驱动 (BYOVD)”？**：虽然使用第三方易受攻击的驱动加载到内核可以绕过 PPL，但这种行为极易导致系统蓝屏（BSOD），且会被全球所有杀毒软件直接判定为勒索木马并永久拉黑。TIMR 坚守安全底线，纯用户态运行。
 
-## 🛠️ 编译与打包指南
+## 编译与打包指南
 
 为确保核心引擎（PsExec）和图片资源被正确打包，**请不要直接使用普通的 pyinstaller 命令**。
 
