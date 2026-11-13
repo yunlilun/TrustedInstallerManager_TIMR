@@ -9,6 +9,7 @@
   [![Python](https://img.shields.io/badge/Python-3.8%2B-brightgreen.svg)](#)
   [![Platform](https://img.shields.io/badge/Platform-Windows_10_|_11-lightgrey.svg)](#)
   [![License](https://img.shields.io/badge/License-MIT-orange.svg)](#)
+  [![Downloads](https://img.shields.io/github/downloads/yunlilun/TrustedInstallerManager_TIMR/total?label=Downloads)](https://github.com/yunlilun/TrustedInstallerManager_TIMR/releases)
 </div>
 
 ---
@@ -27,6 +28,12 @@
   <img src=".img/12.png" width="45%" alt="任务管理器">
   <p><i>TIMR 现代化主界面与内置进程管理器</i></p>
 </div>
+
+## 下载
+
+请前往 **[Releases](https://github.com/yunlilun/TrustedInstallerManager_TIMR/releases)** 页面下载最新版本。
+
+> 由于程序涉及系统底层操作，部分安全软件（如 Windows Defender、360、火绒）可能会误报拦截。这是所有提权工具的普遍现象，并非恶意代码。请将程序加入信任区或白名单后使用。
 
 ## 核心特性
 
