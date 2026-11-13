@@ -1,0 +1,24 @@
+D:\desktop\TrustedInstallerManager\
+│
+├── main.py                      # 带启动图/环境检测/无黑框的入口
+├── config.py                    # 
+├── requirements.txt             # 依赖库清单
+├── build.spec                   # PyInstaller 打包配置文件
+│
+├── core\                        # （确认这个文件夹里有 __init__.py）
+│   ├── __init__.py              # 空文件
+│   ├── executor.py              # 静默夺权、防乱码、防超时
+│   └── win32_api.py             # BitBlt截图、PPL置顶、鼠标穿透隐藏
+│
+├── ui\                          # （确认这个文件夹里有 __init__.py）
+│   ├── __init__.py              # 空文件
+│   ├── capture_overlay.py       # 半透明遮罩、准星、放大镜
+│   └── main_window.py           # 现代化UI、任务管理器、引擎选择
+│
+├── ui\open\                     # （如果文件夹不存在请新建）
+│   └── Start.png                # 你的启动图（没有的话会降级为蓝色背景）
+│
+└── Coreengine\                  # （你下载的微软官方引擎）
+    └── PSTools\
+        ├── PsExec64.exe         # 强杀核心
+        └── ... 其他文件
